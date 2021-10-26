@@ -3,20 +3,29 @@
   background-color: #ffffff;
 }
 
+div.followapi {
+  width: 45%;
+  display: inline;
+  padding-right: 5%;
+}
+div.followingapi {
+  width: 45%;
+  display: inline;
+}
+
 header.header {
   height: 10%;
   margin-bottom: 20%;
 }
 
 nav button {
+  margin-top: 10px;
   background-color: white;
 }
 
 nav button:hover {
-  background-color: gray
+  background-color: gray;
 }
-
-
 
 header img {
   border-radius: 50%;
@@ -31,17 +40,15 @@ h1 {
   padding-left: 2%;
   padding-top: 2%;
   width: 50%;
-  display: "inline";
 }
 
-div.carousel {
-  max-width: 100%;
+div.carousel ul {
+  padding-left: 0;
 }
 
 div.carousel ul li {
   list-style: none;
   display: flex;
-  float: left;
   width: 98%;
   padding: 1%;
   background-color: white;
