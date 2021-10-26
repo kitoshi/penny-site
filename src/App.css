@@ -1,10 +1,37 @@
 * {
   font-family: "PT Serif", serif;
-  background-color: #2a2b2a;
+  background-color: #ffffff;
+}
+
+header.header {
+  height: 10%;
+  margin-bottom: 20%;
+}
+
+nav button {
+  background-color: white;
+}
+
+nav button:hover {
+  background-color: gray
+}
+
+
+
+header img {
+  border-radius: 50%;
+  max-width: 30%;
+  width: 44%;
+  position: absolute;
+  top: 5%;
+  right: 5%;
 }
 
 h1 {
-  padding-left: 5%;
+  padding-left: 2%;
+  padding-top: 2%;
+  width: 50%;
+  display: "inline";
 }
 
 div.carousel {
@@ -15,11 +42,14 @@ div.carousel ul li {
   list-style: none;
   display: flex;
   float: left;
-  width: 50%;
+  width: 98%;
+  padding: 1%;
+  background-color: white;
 }
 
 div.carousel ul li img {
   display: inline;
   max-width: 100%;
   max-height: 100%;
+  border-radius: "50px";
 }
