@@ -37,9 +37,9 @@ header img {
 
 h1 {
   padding-left: 4%;
-  padding-top: 2%;
   width: 50%;
   position: relative;
+  margin-top: 0px;
 }
 
 h2 {
@@ -57,7 +57,6 @@ p.about {
 }
 
 div.insta {
-  position: absolute;
   padding-left: 4%;
   padding-top: 2%;
   width: 50%;
