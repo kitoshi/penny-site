@@ -30,10 +30,11 @@ nav button:hover {
 header img {
   border-radius: 50%;
   max-width: 30%;
-  width: 44%;
+  width: 20%;
   position: absolute;
   top: 5%;
   right: 5%;
+  height: 9.5%;
 }
 
 h1 {
