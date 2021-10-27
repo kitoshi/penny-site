@@ -8,7 +8,7 @@ import Fullscreen from "./Fullscreen";
 function Carousel() {
   const images = [elk, frog, owl, rick, bee];
   const imageItem = images.map((element) => (
-    <img src={element} alt={toString(element)}></img>
+    <img src={element} alt={toString(element)} />
   ));
   return (
     <div className="carousel">
