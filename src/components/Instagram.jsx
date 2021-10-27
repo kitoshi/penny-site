@@ -1,8 +1,8 @@
 function Instagram() {
   return (
     <>
-      <div className="followapi">API CALL Followers</div>
-      <div className="followingapi">API CALL Following</div>
+      <div className="followapi">Followers</div>
+      <div className="followingapi">Following</div>
       <nav>
         <button>Gallery</button>
         <button>About</button>
