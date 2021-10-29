@@ -2,10 +2,14 @@ import "./App.css";
 import Carousel from "./components/Carousel.jsx";
 import penny from "./images/penny.jpg";
 import About from "./components/About";
-
+import useElementonScreen from "./hooks/useElementonScreen";
 
 function App() {
-
+  const [containerRef, isVisible] = useElementonScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.7,
+  });
   return (
     <div className="App">
       <header className="header">
@@ -16,7 +20,7 @@ function App() {
         </div>
       </header>
       <About />
-      <Carousel />
+      <Carousel isVisible={isVisible} containerRef={containerRef} />
     </div>
   );
 }
