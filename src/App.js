@@ -3,7 +3,9 @@ import Carousel from "./components/Carousel.jsx";
 import penny from "./images/penny.jpg";
 import About from "./components/About";
 
+
 function App() {
+
   return (
     <div className="App">
       <header className="header">

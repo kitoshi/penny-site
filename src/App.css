@@ -66,16 +66,15 @@ div.insta {
 }
 
 div.carousel ul {
-  padding-left: 0;
+  padding: 4%;
 }
 
 div.carousel ul li {
   list-style: none;
   display: flex;
   flex-direction: column;
-  width: 92%;
+  width: 100%;
   height: auto;
-  padding: 4%;
   background-color: white;
 }
 
