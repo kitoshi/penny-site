@@ -6,13 +6,17 @@ import rick from "../images/rick.jpeg";
 import { useState } from "react";
 
 function Carousel(props) {
-  const [activePic, setPic] = useState('');
+  const [activePic, setPic] = useState("");
   const handlePic = (e) => {
     const active = e.target.alt;
-    setPic(() => active);
+    if (activePic === e.target.alt) {
+      setPic(() => "");
+    } else {
+      setPic(() => active);
+    }
   };
   const images = [elk, frog, owl, rick, bee];
-  const alt = ['elk', 'frog', 'owl', 'rick', 'bee'];
+  const alt = ["elk", "frog", "owl", "rick", "bee"];
   const imageItem = images.map((element) => (
     <li key={element}>
       <img
