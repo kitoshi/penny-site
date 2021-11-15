@@ -7,10 +7,19 @@ import Welcome from "./components/Welcome";
 import { useState } from "react";
 
 function App() {
-  const [scroll, setScroll] = useState(false)
+  const [scroll, setScroll] = useState(false);
+  const handleChange = (e) => {
+    setScroll(true);
+  };
   return (
-    <div className="App">
-      <Welcome />
+    <div
+      className="App"
+      onScrollCapture={handleChange}
+      onMouseDownCapture={handleChange}
+      onKeyDownCapture={handleChange}
+      onWheelCapture={handleChange}
+    >
+      <Welcome scroll={scroll} />
       <header className="header">
         <div className="insta">@pennyliu07</div>
         <div className="nametag">

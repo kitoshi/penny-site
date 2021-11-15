@@ -1,6 +1,13 @@
 import winterroad from "../images/winterroad.jpg";
+import { useEffect } from "react";
 
 function Welcome(props) {
+  useEffect(() => {
+    if (props.scroll === true) {
+      shrinkImage();
+    }
+  }, [props.scroll]);
+
   function shrinkImage() {
     const welcome = document.getElementById("welcome");
     const text = document.getElementById("introtext");
