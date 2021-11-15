@@ -1,18 +1,26 @@
 import winterroad from "../images/winterroad.jpg";
 
-function Welcome() {
+function Welcome(props) {
   function shrinkImage() {
     const welcome = document.getElementById("welcome");
     const text = document.getElementById("introtext");
-
     welcome.style.height = "0vh";
     welcome.style.transition = "height 5s ease";
     text.style.visibility = "hidden";
     text.style.transition = "visibility 2s ease";
   }
+
+  function growImage() {
+    const welcome = document.getElementById("welcome");
+    const text = document.getElementById("introtext");
+    welcome.style.height = "100vh";
+    welcome.style.transition = "height 5s ease";
+    text.style.visibility = "visible";
+    text.style.transition = "visibility 2s ease";
+  }
   return (
     <div className="welcome" id="welcome">
-      <h2 className="introtext" id="introtext">
+      <h2 className="introtext" id="introtext" onClick={shrinkImage}>
         Hello.<br></br> Walk with me.
       </h2>
       <img

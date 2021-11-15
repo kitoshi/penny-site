@@ -67,6 +67,10 @@ div.insta {
   font-size: 10px;
 }
 
+div.carousel {
+  background-image: url("./images/wavywinter.svg");
+}
+
 div.carousel ul {
   padding: 4%;
 }
@@ -78,6 +82,8 @@ div.carousel ul li {
   width: 100%;
   height: auto;
   background-color: white;
+  margin-bottom: 5%;
+  border-radius: 5%;
 }
 
 div.carousel ul li img {
@@ -85,7 +91,7 @@ div.carousel ul li img {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  margin-top: 4%;
+  background-color: none;
 }
 
 div.bg-color {
@@ -103,7 +109,7 @@ div.col2 {
 div.welcome {
   display: flex;
   text-align: justify;
-  height: 100vh;
+  height: 121vh;
 }
 img.intro {
   z-index: 0;
