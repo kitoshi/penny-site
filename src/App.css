@@ -14,7 +14,6 @@ div.followingapi {
 
 header.header {
   height: 10%;
-  margin-bottom: 10%;
 }
 
 nav button {
@@ -29,10 +28,13 @@ nav button:hover {
 header img {
   border-radius: 50%;
   width: 15%;
-  position: absolute;
-  top: 2%;
-  right: 5%;
+  margin-right: 5%;
   height: auto;
+}
+
+div.nametag {
+  display: flex;
+  justify-content: space-between;
 }
 
 h1 {
@@ -96,4 +98,25 @@ div.col1 {
 }
 div.col2 {
   background-color: rgb(255, 0, 0);
+}
+
+div.welcome {
+  display: flex;
+  text-align: justify;
+  height: 100vh;
+}
+img.intro {
+  z-index: 0;
+  width: 100vh;
+
+  object-fit: none;
+  object-position: 40% 60%;
+}
+
+h2.introtext {
+  z-index: 400;
+  position: absolute;
+  top: 5%;
+  right: 1%;
+  width: 30%;
 }
