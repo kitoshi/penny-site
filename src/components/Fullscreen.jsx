@@ -1,6 +1,5 @@
 function Fullscreen() {
-  const img = document.getElementsByTagName("img");
-  return <></>;
+  return <div className="overlay"></div>;
 }
 
 export default Fullscreen;

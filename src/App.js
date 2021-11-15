@@ -2,14 +2,9 @@ import "./App.css";
 import Carousel from "./components/Carousel.jsx";
 import penny from "./images/penny.jpg";
 import About from "./components/About";
-import useElementonScreen from "./hooks/useElementonScreen";
+import Fullscreen from "./components/Fullscreen";
 
 function App() {
-  const [containerRef, isVisible] = useElementonScreen({
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.7,
-  });
   return (
     <div className="App">
       <header className="header">
@@ -20,7 +15,8 @@ function App() {
         </div>
       </header>
       <About />
-      <Carousel isVisible={isVisible} containerRef={containerRef} />
+      <Fullscreen />
+      <Carousel />
     </div>
   );
 }

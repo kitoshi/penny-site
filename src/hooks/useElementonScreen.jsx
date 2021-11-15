@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+/*import { useState, useEffect, useRef } from "react";
 
 function useElementonScreen(options) {
   const containerRef = useRef(null);
@@ -19,3 +19,4 @@ function useElementonScreen(options) {
 }
 //https://dev.to/producthackers/intersection-observer-using-react-49ko
 export default useElementonScreen;
+*/
