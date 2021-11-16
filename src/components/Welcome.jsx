@@ -11,6 +11,12 @@ function Welcome(props) {
   function shrinkImage() {
     const welcome = document.getElementById("welcome");
     const text = document.getElementById("introtext");
+    const scroll = document.querySelectorAll("*");
+    //timer for scroll bar to pop up
+    setTimeout(() => {
+      scroll[0].style.overflow = "scroll";
+    }, 5000);
+
     welcome.style.height = "0vh";
     welcome.style.transition = "height 5s ease";
     text.style.visibility = "hidden";

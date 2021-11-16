@@ -1,7 +1,12 @@
 * {
   font-family: "Rufina", serif;
+  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
 }
 
+body {
+  overflow: hidden;
+}
 div.App {
   height: 100%;
 }
@@ -77,6 +82,9 @@ div.carousel {
 
 div.carousel ul {
   padding: 4%;
+  padding-top: 0.5%;
+  padding-bottom: 2%;
+  margin-bottom: 0%;
 }
 
 div.carousel ul li {
@@ -86,7 +94,7 @@ div.carousel ul li {
   width: 100%;
   height: auto;
   background-color: white;
-  margin-bottom: 5%;
+  margin-top: 4%;
   border-radius: 5%;
 }
 
@@ -113,7 +121,7 @@ div.col2 {
 div.welcome {
   display: flex;
   text-align: justify;
-  height: 121vh;
+  height: 100vh;
 }
 img.intro {
   z-index: 0;
