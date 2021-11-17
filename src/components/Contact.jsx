@@ -1,17 +1,16 @@
 function Contact() {
   return (
     <>
-      <p>Put your vision to canvas:</p>
-      <form>
-        <label>
-          Email
+      <footer id="footer">
+        <p>Put your vision to canvas:</p>
+        <form>
+          <label>Email:</label>
           <input />
-        </label>
-        <label>
+          <label>Message:</label>
           <textarea></textarea>
-        </label>
-        <button>Send</button>
-      </form>
+          <button>Send</button>
+        </form>
+      </footer>
     </>
   );
 }

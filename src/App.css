@@ -60,11 +60,32 @@ h2 {
   font-size: 15px;
 }
 
-p.about {
+p {
   margin-top: 0;
   width: 50%;
   padding-left: 4%;
   font-size: 12px;
+}
+
+form label {
+  width: 100%;
+}
+
+form button {
+  width: 50%;
+}
+
+form {
+  margin-top: 0%;
+  width: 80%;
+  padding-left: 4%;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: 5%;
 }
 
 div.insta {

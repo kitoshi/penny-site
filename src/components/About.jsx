@@ -8,7 +8,7 @@ function About() {
       <p className="about">Each piece is an expression of my life.</p>
       <p className="about">
         <strong>
-          <u>Let me express your life.</u>
+          <a href="#footer">Let me express your life.</a>
         </strong>
       </p>
     </div>
