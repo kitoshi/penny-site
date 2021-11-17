@@ -4,6 +4,7 @@ import penny from "./images/penny.jpg";
 import About from "./components/About";
 import Fullscreen from "./components/Fullscreen";
 import Welcome from "./components/Welcome";
+import Contact from "./components/Contact";
 import { useState } from "react";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <About />
       <Fullscreen />
       <Carousel />
+      <Contact />
     </div>
   );
 }
