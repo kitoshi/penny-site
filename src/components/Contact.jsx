@@ -2,7 +2,9 @@ function Contact() {
   return (
     <>
       <footer id="footer">
-        <p>Put your vision to canvas:</p>
+        <p>
+          <strong>Put your vision to canvas:</strong>
+        </p>
         <form>
           <label>Email:</label>
           <input />

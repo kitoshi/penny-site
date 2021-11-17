@@ -21,8 +21,14 @@ div.followingapi {
   width: 45%;
   display: inline;
 }
-strong button {
-  border: none;
+
+u {
+  cursor: pointer;
+}
+
+p.paintinfo {
+  height: 0vh;
+  margin-bottom: 0%;
 }
 
 header {
@@ -152,9 +158,8 @@ div.welcome {
 img.intro {
   z-index: 0;
   width: 100vh;
-
   object-fit: none;
-  object-position: 40% 60%;
+  object-position: 30% 60%;
 }
 
 h2.introtext {

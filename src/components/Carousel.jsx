@@ -13,19 +13,33 @@ function Carousel(props) {
       setPic(() => "");
     } else {
       setPic(() => active);
+      showText();
     }
   };
+  function showText() {
+    //const item = document.querySelector(img[(alt = activePic)]);
+    //item.style.height = "100vh";
+    //item.style.transition = "height 5s ease";
+  }
   const images = [elk, frog, owl, rick, bee];
-  const alt = ["elk", "frog", "owl", "rick", "bee"];
+  const altText = ["elk", "frog", "owl", "rick", "bee"];
+  const imageInfo = [
+    "Description1",
+    "Description2",
+    "Description3",
+    "Description4",
+    "Description5",
+  ];
   const imageItem = images.map((element) => (
     <li key={element}>
       <img
         index={images.indexOf(element)}
         src={element}
-        alt={alt[images.indexOf(element)]}
+        alt={altText[images.indexOf(element)]}
         onClick={handlePic}
         className="paint"
       />
+      <p className="paintinfo">{imageInfo[images.indexOf(element)]}</p>
     </li>
   ));
 

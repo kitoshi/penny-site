@@ -23,14 +23,7 @@ function Welcome(props) {
     text.style.transition = "visibility 2s ease";
   }
 
-  function growImage() {
-    const welcome = document.getElementById("welcome");
-    const text = document.getElementById("introtext");
-    welcome.style.height = "100vh";
-    welcome.style.transition = "height 5s ease";
-    text.style.visibility = "visible";
-    text.style.transition = "visibility 2s ease";
-  }
+  
   return (
     <div className="welcome" id="welcome">
       <h2 className="introtext" id="introtext" onClick={shrinkImage}>
