@@ -3,6 +3,7 @@ import elk from "../images/elk.jpg";
 import frog from "../images/frog.jpeg";
 import owl from "../images/owl.jpeg";
 import rick from "../images/rick.jpeg";
+import fairy from "../images/fairy.jpeg";
 import { useState } from "react";
 
 function Carousel(props) {
@@ -21,14 +22,15 @@ function Carousel(props) {
     //item.style.height = "100vh";
     //item.style.transition = "height 5s ease";
   }
-  const images = [elk, frog, owl, rick, bee];
-  const altText = ["elk", "frog", "owl", "rick", "bee"];
+  const images = [elk, frog, owl, rick, bee, fairy];
+  const altText = ["elk", "frog", "owl", "rick", "bee", "fairy"];
   const imageInfo = [
     "Description1",
     "Description2",
     "Description3",
     "Description4",
     "Description5",
+    "Description6",
   ];
   const imageItem = images.map((element) => (
     <li key={element}>

@@ -12,7 +12,7 @@ function About() {
       <p className="about">Each piece is an expression of my life.</p>
       <p className="about">
         <strong>
-          <u onClick={goFooter}>Let me express your life.</u>
+          <u onClick={goFooter}>Let me express your life through my art.</u>
         </strong>
       </p>
     </div>

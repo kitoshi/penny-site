@@ -3,7 +3,9 @@ function Contact() {
     <>
       <footer id="footer">
         <p>
-          <strong>Put your vision to canvas:</strong>
+          <strong>
+            I can put your vision to canvas. Send me a request for more details:
+          </strong>
         </p>
         <form>
           <label>Email:</label>
