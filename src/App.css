@@ -112,6 +112,12 @@ div.carousel {
   background-image: url("./images/wavywinter.svg");
 }
 
+div.headerbackground {
+  background-image: url("./images/waterscape.jpg");
+  background-position-x: 19%;
+  background-position-y: 54%;
+}
+
 div.carousel ul {
   padding: 4%;
   padding-top: 0.5%;
@@ -123,8 +129,8 @@ div.carousel ul li {
   list-style: none;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
   background-color: white;
   margin-top: 4%;
   border-radius: 5%;
@@ -178,8 +184,29 @@ h2.introtext {
     z-index: 400;
     position: absolute;
     top: 5%;
-    right: 20%;
+    right: 25%;
     width: 30%;
     font-size: 200%;
+  }
+  div.carousel ul li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    margin-top: 4%;
+    border-radius: 5%;
+    align-items: center;
+  }
+  div.carousel ul li img {
+    display: inline;
+    width: 78%;
+    height: auto;
+    border-radius: 10px;
+    background-color: transparent;
+  }
+  div.carousel ul {
+    background-color: transparent;
   }
 }

@@ -21,14 +21,16 @@ function App() {
       onWheelCapture={handleChange}
     >
       <Welcome scroll={scroll} />
-      <header className="header">
-        <div className="insta">@pennyliu07</div>
-        <div className="nametag">
-          <h1>Penny Liu</h1>
-          <img src={penny} alt="Penny"></img>
-        </div>
-      </header>
-      <About />
+      <div className="headerbackground">
+        <header className="header">
+          <div className="insta">@pennyliu07</div>
+          <div className="nametag">
+            <h1>Penny Liu</h1>
+            <img src={penny} alt="Penny"></img>
+          </div>
+        </header>
+        <About />
+      </div>
       <Fullscreen />
       <Carousel />
       <Contact />
