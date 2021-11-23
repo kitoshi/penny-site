@@ -18,8 +18,8 @@ function Carousel(props) {
     }
   };
   function showText() {
-    //const item = document.querySelector(img[(alt = activePic)]);
-    //item.style.height = "100vh";
+    //const item = document.querySelector("img[alt = {activePic}]");
+    // item.style.height = "100vh";
     //item.style.transition = "height 5s ease";
   }
   const images = [elk, frog, owl, rick, bee, fairy];
