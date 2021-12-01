@@ -23,7 +23,6 @@ function Welcome(props) {
     text.style.transition = "visibility 2s ease";
   }
 
-  
   return (
     <div className="welcome" id="welcome">
       <h2 className="introtext" id="introtext" onClick={shrinkImage}>

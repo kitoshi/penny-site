@@ -1,6 +1,5 @@
 import "./App.css";
 import Carousel from "./components/Carousel.jsx";
-import penny from "./images/penny.jpg";
 import About from "./components/About";
 import Fullscreen from "./components/Fullscreen";
 import Welcome from "./components/Welcome";
@@ -21,16 +20,7 @@ function App() {
       onWheelCapture={handleChange}
     >
       <Welcome scroll={scroll} />
-      <div className="headerbackground">
-        <header className="header">
-          <div className="insta">@pennyliu07</div>
-          <div className="nametag">
-            <h1>Penny Liu</h1>
-            <img src={penny} alt="Penny"></img>
-          </div>
-        </header>
-        <About />
-      </div>
+      <About scroll={scroll} />
       <Fullscreen />
       <Carousel />
       <Contact />

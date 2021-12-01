@@ -112,10 +112,10 @@ div.carousel {
   background-image: url("./images/wavywinter.svg");
 }
 
-div.headerbackground {
-  background-image: url("./images/waterscape.jpg");
+div.aboutcontainer {
+  background-image: url("./images/spiralsnow.jpg");
   background-position-x: 19%;
-  background-position-y: 54%;
+  background-position-y: 43%;
 }
 
 div.carousel ul {
@@ -158,12 +158,11 @@ div.col2 {
 
 div.welcome {
   display: flex;
-  text-align: justify;
   height: 100vh;
 }
 img.intro {
   z-index: 0;
-  width: 100vh;
+  height: 100vh;
   object-fit: none;
   object-position: 30% 60%;
 }
@@ -188,6 +187,12 @@ h2.introtext {
     width: 30%;
     font-size: 200%;
   }
+  img.intro {
+    z-index: 0;
+    height: 100vh;
+    object-fit: none;
+    object-position: 25% 60%;
+  }
   div.carousel ul li {
     list-style: none;
     display: flex;
@@ -201,7 +206,7 @@ h2.introtext {
   }
   div.carousel ul li img {
     display: inline;
-    width: 78%;
+    width: 65%;
     height: auto;
     border-radius: 10px;
     background-color: transparent;
