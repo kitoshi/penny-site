@@ -109,11 +109,11 @@ div.insta {
 }
 
 div.carousel {
-  background-image: url("./images/wavywinter.svg");
+  background-image: url("./images/whitetobluewavy.svg");
+  background-size: cover;
 }
 
 div.aboutcontainer {
-  background-image: url("./images/spiralsnow.jpg");
   background-position-x: 19%;
   background-position-y: 43%;
 }

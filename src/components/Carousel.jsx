@@ -8,20 +8,17 @@ import { useState } from "react";
 
 function Carousel(props) {
   const [activePic, setPic] = useState("");
+
   const handlePic = (e) => {
     const active = e.target.alt;
     if (activePic === e.target.alt) {
       setPic(() => "");
     } else {
       setPic(() => active);
-      showText();
     }
   };
-  function showText() {
-    //const item = document.querySelector("img[alt = {activePic}]");
-    // item.style.height = "100vh";
-    //item.style.transition = "height 5s ease";
-  }
+
+  function showText(images) {}
   const images = [elk, frog, owl, rick, bee, fairy];
   const altText = ["elk", "frog", "owl", "rick", "bee", "fairy"];
   const imageInfo = [
