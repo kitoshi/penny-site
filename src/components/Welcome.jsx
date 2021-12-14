@@ -4,11 +4,11 @@ import { useEffect } from "react";
 function Welcome(props) {
   useEffect(() => {
     if (props.scroll === true) {
-      shrinkImage();
+      goAbout();
     }
   }, [props.scroll]);
 
-  function shrinkImage() {
+  /*function shrinkImage() {
     const welcome = document.getElementById("welcome");
     const text = document.getElementById("introtext");
     const scroll = document.querySelectorAll("*");
@@ -17,22 +17,29 @@ function Welcome(props) {
       scroll[0].style.overflow = "scroll";
     }, 5000);
 
-    welcome.style.height = "0vh";
+    welcome.style.height = "-100vh";
     welcome.style.transition = "height 5s ease";
     text.style.visibility = "hidden";
     text.style.transition = "visibility 2s ease";
   }
+  //causing lag
+  */
+
+  function goAbout() {
+    const about = document.getElementById('#aboutcontainer')
+    about.scrollIntoView()
+  }
 
   return (
     <div className="welcome" id="welcome">
-      <h2 className="introtext" id="introtext" onClick={shrinkImage}>
+      <h2 className="introtext" id="introtext" onClick={goAbout}>
         Hello.<br></br> Walk with me.
       </h2>
       <img
         src={winterroad}
         alt="winter road landscape"
         className="intro"
-        onClick={shrinkImage}
+        onClick={goAbout}
       />
     </div>
   );
