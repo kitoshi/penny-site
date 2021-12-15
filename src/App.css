@@ -92,7 +92,7 @@ form {
 }
 
 footer {
-  margin-top: 5%;
+  margin-top: 2%;
 }
 
 div.insta {
@@ -241,6 +241,7 @@ h2.introtext {
   }
   .modal-content {
     margin: 10%;
+    margin-top: 6%;
     border: 1px solid #888;
     height: 75%;
     width: auto;

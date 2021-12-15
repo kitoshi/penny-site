@@ -2,7 +2,11 @@ import penny from "../images/penny.jpg";
 function About(props) {
   function goFooter() {
     const footer = document.getElementById("footer");
-    footer.scrollIntoView();
+    footer.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
   }
   return (
     <div className="aboutcontainer">
