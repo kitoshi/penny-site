@@ -3,7 +3,6 @@ import winterroad from "../images/winterroad.jpg";
 function Welcome(props) {
   function goAbout() {
     const about = document.querySelector(".header");
-    document.querySelector("*").style.overflow = "scroll";
     about.scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -11,10 +10,9 @@ function Welcome(props) {
     });
   }
   return (
-    <div className="welcome" id="welcome" onClick={goAbout}>
-      <h2 className="introtext" id="introtext">
-        Hello.<br></br> Walk with me.
-      </h2>
+    <div className="welcome" onClick={goAbout}>
+      <h2 className="introtext shimmer">Hello.</h2>
+      <h3 className="introtext">Walk with me.</h3>
       <img src={winterroad} alt="winter road landscape" className="intro" />
     </div>
   );

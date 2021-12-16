@@ -1,4 +1,5 @@
 import penny from "../images/penny.jpg";
+import downarrow from "../images/expand_more_white_48dp.svg";
 function About(props) {
   function goFooter() {
     const footer = document.getElementById("footer");
@@ -29,6 +30,17 @@ function About(props) {
           <u onClick={goFooter}>Let me express your life through my art.</u>
         </strong>
       </p>
+      <p className="about">Take a look at my pieces.</p>
+      <img
+        alt="downarrow"
+        src={downarrow}
+        style={{
+          width: "35%",
+          height: "25vh",
+          marginLeft: "30%",
+          marginRight: "30%",
+        }}
+      ></img>
     </div>
   );
 }

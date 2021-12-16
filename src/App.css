@@ -1,11 +1,37 @@
-* {
-  font-family: "Rufina", serif;
-  overflow: hidden;
+:root {
+  --sage: #d2cca1;
+  --paleSpringBud: #dedaba;
+  --goldCrayola: #e5c687;
+  --richBlackForeground: #0f1a20;
+  --white: #f8f8f8;
+  --black: #222;
+  --msuGreen: #2d4739;
+  --gray: #eee;
 }
 
-body {
-  overflow: hidden;
+.light-theme {
+  --themeDropDownBg: var(--goldCrayola);
+  --themeIconBorderColor: var(--sage);
+  --navBg: var(--sage);
+  --navLinkHoverBg: var(--paleSpringBud);
+  --mainBg: var(--goldCrayola);
+  --fontColor: var(--black);
 }
+
+.dark-theme {
+  --themeDropDownBg: var(--msuGreen);
+  --themeIconBorderColor: var(--richBlackForeground);
+  --navBg: var(--richBlackForeground);
+  --navLinkHoverBg: var(--msuGreen);
+  --mainBg: var(--black);
+  --fontColor: var(--white);
+}
+
+* {
+  font-family: "Rufina", serif;
+  color: var(--fontColor);
+}
+
 div.App {
   height: 100%;
 }
@@ -31,11 +57,11 @@ header {
 
 nav button {
   margin-top: 10px;
-  background-color: white;
+  background-color: var(--navBg);
 }
 
 nav button:hover {
-  background-color: gray;
+  background-color: var(--navLinkHoverBg);
 }
 
 header img {
@@ -69,9 +95,6 @@ p {
   width: 50%;
   padding-left: 4%;
   font-size: 100%;
-}
-a {
-  color: black;
 }
 
 form label {
@@ -107,12 +130,19 @@ div.carousel {
   background-size: cover;
 }
 
+.about {
+  margin-bottom: 0px;
+}
+
 div.aboutcontainer {
-  background-image: url("./images/curlypattern.png");
+  background-image: url("./images/polkadotpattern.svg");
+  padding-top: 25vh;
+  padding-bottom: 25vh;
 }
 
 div.carousel ul {
   padding: 4%;
+  margin-top: 0%;
   padding-top: 0.5%;
   padding-bottom: 2%;
   margin-bottom: 0%;
@@ -124,7 +154,6 @@ div.carousel ul li {
   flex-direction: column;
   width: auto;
   height: 100%;
-  background-color: white;
   margin-top: 4%;
   border-radius: 5%;
 }
@@ -142,30 +171,42 @@ div.bg-color {
   display: inline;
 }
 
-div.col1 {
-  background-color: blue;
-}
-div.col2 {
-  background-color: rgb(255, 0, 0);
+div.spacer {
+  height: 5vh;
+  background-image: url(./images/stripedpattern.svg);
 }
 
 div.welcome {
   display: flex;
   height: 100vh;
 }
+
 img.intro {
   z-index: 0;
   height: 100vh;
+  width: 100%;
   object-fit: none;
   object-position: 30% 60%;
 }
 
 h2.introtext {
+  color: black;
+  text-shadow: 2px 2px #4d4d4d54;
   z-index: 400;
   position: absolute;
   top: 5%;
   right: 1%;
-  width: 30%;
+  width: 45%;
+}
+
+h3.introtext {
+  color: black;
+  text-shadow: 2px 2px #4d4d4d3d;
+  z-index: 400;
+  position: absolute;
+  top: 8%;
+  right: 1%;
+  width: 45%;
 }
 
 .modal {
@@ -184,7 +225,7 @@ h2.introtext {
 }
 
 .modal-content {
-  margin: 15%;
+  margin: 5%;
   border: 1px solid #888;
   height: auto;
   width: 100%;
@@ -199,15 +240,50 @@ h2.introtext {
   width: 100%;
 }
 
-@media only screen and (min-width: 900px) {
+textarea {
+  background-color: var(--mainBg);
+}
+
+@keyframes typing {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+
+  100% {
+    background-position: top right;
+  }
+}
+
+@media only screen and (min-width: 900px), (min-height: 900px) {
   body {
+    background-color: var(--mainBg);
+  }
+  .App {
     padding-left: 20%;
     padding-right: 20%;
+    background-color: var(--mainBg);
   }
   h2.introtext {
     z-index: 400;
     position: absolute;
     top: 5%;
+    right: 25%;
+    width: 30%;
+    font-size: 200%;
+  }
+  h3.introtext {
+    z-index: 400;
+    position: absolute;
+    top: 8%;
     right: 25%;
     width: 30%;
     font-size: 200%;
