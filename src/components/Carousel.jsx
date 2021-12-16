@@ -8,7 +8,7 @@ import { useState } from "react";
 
 function Carousel(props) {
   const [activePic, setPic] = useState("");
-
+  const listItem = document.querySelectorAll(".imagelistitem");
   const handlePic = (e) => {
     const active = e.target.alt;
     const modal = document.querySelector("div.modal");
@@ -20,6 +20,26 @@ function Carousel(props) {
       modal.style.display = "flex";
     }
   };
+
+  const imagesColors = [
+    "#486c7b",
+    "#352f33",
+    "#595959",
+    "#1c0702",
+    "#9d6b0f",
+    "#deae40",
+  ];
+
+  function isInViewport(element) {
+    const item = element.getBoundingClientRect();
+    return (
+      item.top >= 0 &&
+      item.left >= 0 &&
+      item.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      item.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
   const images = [elk, frog, owl, rick, bee, fairy];
   const altText = ["elk", "frog", "owl", "rick", "bee", "fairy"];
   const imageInfo = [
@@ -31,7 +51,7 @@ function Carousel(props) {
     "Fairy, November 10, 2021",
   ];
   const imageItem = images.map((element) => (
-    <li key={element}>
+    <li key={element} className="imagelistitem">
       <img
         index={images.indexOf(element)}
         src={element}

@@ -5,16 +5,16 @@ import Fullscreen from "./components/Fullscreen";
 import Welcome from "./components/Welcome";
 import Contact from "./components/Contact";
 import Spacer from "./components/Spacer";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App dark-theme">
-      <Welcome />
-      <Spacer />
-      <About />
-      <Spacer />
+      <Navbar />
       <Fullscreen />
       <Carousel />
+      <Welcome />
+      <About />
       <Contact />
     </div>
   );

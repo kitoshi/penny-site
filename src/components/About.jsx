@@ -9,6 +9,14 @@ function About(props) {
       inline: "nearest",
     });
   }
+  function goCarousel() {
+    const carousel = document.querySelector("div.carousel");
+    carousel.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+  }
   return (
     <div className="aboutcontainer">
       <div className="headerbackground">
@@ -40,6 +48,7 @@ function About(props) {
           marginLeft: "30%",
           marginRight: "30%",
         }}
+        onClick={goCarousel}
       ></img>
     </div>
   );

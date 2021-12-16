@@ -2,7 +2,7 @@ import winterroad from "../images/winterroad.jpg";
 
 function Welcome(props) {
   function goAbout() {
-    const about = document.querySelector(".header");
+    const about = document.querySelector(".aboutcontainer");
     about.scrollIntoView({
       behavior: "smooth",
       block: "start",
