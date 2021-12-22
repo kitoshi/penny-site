@@ -1,5 +1,5 @@
 import penny from "../images/penny.jpg";
-import downarrow from "../images/expand_more_white_48dp.svg";
+//import downarrow from "../images/expand_more_white_48dp.svg";
 function About(props) {
   function goFooter() {
     const footer = document.getElementById("footer");
@@ -9,14 +9,24 @@ function About(props) {
       inline: "nearest",
     });
   }
-  function goCarousel() {
+  /* function goCarousel() {
     const carousel = document.querySelector("div.carousel");
     carousel.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
-  }
+  }      <img
+        alt="downarrow"
+        src={downarrow}
+        style={{
+          width: "35%",
+          height: "25vh",
+          marginLeft: "30%",
+          marginRight: "30%",
+        }}
+        onClick={goCarousel}
+      ></img>*/
   return (
     <div className="aboutcontainer">
       <div className="headerbackground">
@@ -39,17 +49,6 @@ function About(props) {
         </strong>
       </p>
       <p className="about">Take a look at my pieces.</p>
-      <img
-        alt="downarrow"
-        src={downarrow}
-        style={{
-          width: "35%",
-          height: "25vh",
-          marginLeft: "30%",
-          marginRight: "30%",
-        }}
-        onClick={goCarousel}
-      ></img>
     </div>
   );
 }

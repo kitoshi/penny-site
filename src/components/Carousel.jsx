@@ -4,11 +4,13 @@ import frog from "../images/frog.jpeg";
 import owl from "../images/owl.jpeg";
 import rick from "../images/rick.jpeg";
 import fairy from "../images/fairy.jpeg";
-import { useState, useEffect, useRef } from "react";
+import rightarrow from "../images/chevron_right_black.svg";
+import leftarrow from "../images/chevron_left_black.svg";
+import { useState, useEffect } from "react";
 
 function Carousel(props) {
   const [activePic, setPic] = useState("");
-  const imageRef = useRef([]);
+  const [carouselFocus, setFocus] = useState(0);
   const listItem = document.querySelectorAll(".imagelistitem");
   const handlePic = (e) => {
     const active = e.target.alt;
@@ -21,34 +23,29 @@ function Carousel(props) {
       modal.style.display = "flex";
     }
   };
+  const handleFocusRight = (e) => {
+    if (carouselFocus === 5) {
+      setFocus((carouselFocus) => carouselFocus - 5);
+    } else {
+      setFocus((carouselFocus) => carouselFocus + 1);
+    }
+  };
+  const handleFocusLeft = (e) => {
+    if (carouselFocus === 0) {
+      setFocus((carouselFocus) => carouselFocus + 5);
+    } else {
+      setFocus((carouselFocus) => carouselFocus - 1);
+    }
+  };
 
-  const imagesColors = [
+  /*const imagesColors = [
     "#486c7b",
     "#352f33",
     "#595959",
     "#1c0702",
     "#9d6b0f",
     "#deae40",
-  ];
-
-  const useIntersection = (element, rootMargin) => {
-    const [isVisible, setState] = useState(false);
-
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          setState(entry.isIntersecting);
-        },
-        { rootMargin }
-      );
-
-      element && observer.observe(element);
-
-      return () => observer.unobserve(element);
-    }, []);
-
-    return isVisible;
-  };
+  ];*/
 
   const images = [elk, frog, owl, rick, bee, fairy];
   const altText = ["elk", "frog", "owl", "rick", "bee", "fairy"];
@@ -60,23 +57,36 @@ function Carousel(props) {
     "Bee, November 10, 2021",
     "Fairy, November 10, 2021",
   ];
+  useEffect(() => {
+    if (listItem[carouselFocus] === undefined) {
+    } else {
+      listItem[carouselFocus].style.display = "flex";
+    }
+  }, [listItem, carouselFocus]);
+
   const imageItem = images.map((element) => (
     <li key={element} className="imagelistitem">
       <img
         index={images.indexOf(element)}
         src={element}
         alt={altText[images.indexOf(element)]}
-        style={{ display: 'none' }}
         onClick={handlePic}
         className={`paint`}
-        ref={(el) => (imageRef.current[element] = el)}
+        style={{ display: "none" }}
       />
     </li>
   ));
-
   return (
     <div className="carousel">
-      <ul>{imageItem}</ul>
+      <ul style={{ display: "flex", flexDirection: "row" }}>
+        <img src={leftarrow} alt="left arrow" onClick={handleFocusLeft}></img>
+        {imageItem}
+        <img
+          src={rightarrow}
+          alt="right arrow"
+          onClick={handleFocusRight}
+        ></img>
+      </ul>
       <div className="modal" onClick={handlePic}>
         <img
           src={images[altText.indexOf(activePic)]}
