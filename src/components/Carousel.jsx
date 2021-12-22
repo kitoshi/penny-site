@@ -6,7 +6,7 @@ import rick from "../images/rick.jpeg";
 import fairy from "../images/fairy.jpeg";
 import rightarrow from "../images/chevron_right_black.svg";
 import leftarrow from "../images/chevron_left_black.svg";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function Carousel(props) {
   const [activePic, setPic] = useState("");
@@ -57,14 +57,8 @@ function Carousel(props) {
     "Bee, November 10, 2021",
     "Fairy, November 10, 2021",
   ];
-  useEffect(() => {
-    if (listItem[carouselFocus] === undefined) {
-    } else {
-      listItem[carouselFocus].style.display = "flex";
-    }
-  }, [listItem, carouselFocus]);
 
-  const imageItem = images.map((element) => (
+  const imageItem = images.map((element, index) => (
     <li key={element} className="imagelistitem">
       <img
         index={images.indexOf(element)}
@@ -72,7 +66,7 @@ function Carousel(props) {
         alt={altText[images.indexOf(element)]}
         onClick={handlePic}
         className={`paint`}
-        style={{ display: "none" }}
+        style={{ display: index === carouselFocus ? "flex" : "none" }} //ternary function inline
       />
     </li>
   ));
