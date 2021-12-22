@@ -4,10 +4,11 @@ import frog from "../images/frog.jpeg";
 import owl from "../images/owl.jpeg";
 import rick from "../images/rick.jpeg";
 import fairy from "../images/fairy.jpeg";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function Carousel(props) {
   const [activePic, setPic] = useState("");
+  const imageRef = useRef([]);
   const listItem = document.querySelectorAll(".imagelistitem");
   const handlePic = (e) => {
     const active = e.target.alt;
@@ -30,16 +31,25 @@ function Carousel(props) {
     "#deae40",
   ];
 
-  function isInViewport(element) {
-    const item = element.getBoundingClientRect();
-    return (
-      item.top >= 0 &&
-      item.left >= 0 &&
-      item.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-      item.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
+  const useIntersection = (element, rootMargin) => {
+    const [isVisible, setState] = useState(false);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setState(entry.isIntersecting);
+        },
+        { rootMargin }
+      );
+
+      element && observer.observe(element);
+
+      return () => observer.unobserve(element);
+    }, []);
+
+    return isVisible;
+  };
+
   const images = [elk, frog, owl, rick, bee, fairy];
   const altText = ["elk", "frog", "owl", "rick", "bee", "fairy"];
   const imageInfo = [
@@ -56,8 +66,10 @@ function Carousel(props) {
         index={images.indexOf(element)}
         src={element}
         alt={altText[images.indexOf(element)]}
+        style={{ display: 'none' }}
         onClick={handlePic}
         className={`paint`}
+        ref={(el) => (imageRef.current[element] = el)}
       />
     </li>
   ));

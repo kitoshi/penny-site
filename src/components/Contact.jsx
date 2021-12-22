@@ -1,7 +1,7 @@
 function Contact() {
   return (
     <>
-      <footer id="footer">
+      <footer className="footer">
         <p>
           <strong>
             I can put your vision to canvas. Send me a request for more details:

@@ -9,11 +9,10 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App dark-theme">
+    <div className="App light-theme">
       <Navbar />
       <Fullscreen />
       <Carousel />
-      <Welcome />
       <About />
       <Contact />
     </div>
