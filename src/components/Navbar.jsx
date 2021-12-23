@@ -1,9 +1,7 @@
-function Navbar(params) {
-    return (
-        <div>
+import React from "react";
 
-        </div>
-    )
+function Navbar() {
+  return <div></div>;
 }
 
 export default Navbar;

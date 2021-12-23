@@ -128,7 +128,6 @@ ul.carousellist {
   padding-left: 0;
   flex-direction: column;
 }
-
 ul.carousellist li.arrow {
   transform: rotate(90deg);
 }

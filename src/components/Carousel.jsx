@@ -7,8 +7,9 @@ import fairy from "../images/fairy.jpeg";
 import rightarrow from "../images/chevron_right_black.svg";
 import leftarrow from "../images/chevron_left_black.svg";
 import { useState } from "react";
+import React from "react";
 
-function Carousel(props) {
+function Carousel() {
   const [activePic, setPic] = useState("");
   const [carouselFocus, setFocus] = useState(0);
   const handlePic = (e) => {
@@ -22,19 +23,19 @@ function Carousel(props) {
       modal.style.display = "flex";
     }
   };
-  const handleFocusRight = (e) => {
+  const handleFocusRight = () => {
     if (carouselFocus === 5) {
-      setFocus((carouselFocus) => carouselFocus - 5);
+      setFocus(0);
     } else {
-      setFocus((carouselFocus) => carouselFocus + 1);
+      setFocus((currentValue) => currentValue + 1);
     }
   };
 
-  const handleFocusLeft = (e) => {
+  const handleFocusLeft = () => {
     if (carouselFocus === 0) {
-      setFocus((carouselFocus) => carouselFocus + 5);
+      setFocus(5);
     } else {
-      setFocus((carouselFocus) => carouselFocus - 1);
+      setFocus((currentValue) => currentValue - 1);
     }
   };
 
@@ -62,14 +63,18 @@ function Carousel(props) {
     <li
       key={element}
       className="imagelistitem"
-      style={{ display: "flex", justifyContent: "center" }}
+      style={{
+        display: index === carouselFocus ? "flex" : "none",
+        justifyContent: "center",
+        height: "100%",
+      }}
     >
       <img
         index={images.indexOf(element)}
         src={element}
         alt={altText[images.indexOf(element)]}
         onClick={handlePic}
-        className={`paint`}
+        className={"paint"}
         style={{
           display: index === carouselFocus ? "flex" : "none",
           width: "100%",
@@ -88,7 +93,6 @@ function Carousel(props) {
           display: "flex",
           listStyle: "none",
           height: "100%",
-          justifyContent: "center",
         }}
       >
         <li
