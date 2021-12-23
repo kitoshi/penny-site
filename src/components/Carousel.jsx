@@ -11,7 +11,6 @@ import { useState } from "react";
 function Carousel(props) {
   const [activePic, setPic] = useState("");
   const [carouselFocus, setFocus] = useState(0);
-  const listItem = document.querySelectorAll(".imagelistitem");
   const handlePic = (e) => {
     const active = e.target.alt;
     const modal = document.querySelector("div.modal");
@@ -30,6 +29,7 @@ function Carousel(props) {
       setFocus((carouselFocus) => carouselFocus + 1);
     }
   };
+
   const handleFocusLeft = (e) => {
     if (carouselFocus === 0) {
       setFocus((carouselFocus) => carouselFocus + 5);
@@ -59,27 +59,61 @@ function Carousel(props) {
   ];
 
   const imageItem = images.map((element, index) => (
-    <li key={element} className="imagelistitem">
+    <li
+      key={element}
+      className="imagelistitem"
+      style={{ display: "flex", justifyContent: "center" }}
+    >
       <img
         index={images.indexOf(element)}
         src={element}
         alt={altText[images.indexOf(element)]}
         onClick={handlePic}
         className={`paint`}
-        style={{ display: index === carouselFocus ? "flex" : "none" }} //ternary function inline
+        style={{
+          display: index === carouselFocus ? "flex" : "none",
+          width: "100%",
+          margin: "auto",
+          height: "auto",
+          border: "5px solid",
+        }} //ternary function inline
       />
     </li>
   ));
   return (
-    <div className="carousel">
-      <ul style={{ display: "flex", flexDirection: "row" }}>
-        <img src={leftarrow} alt="left arrow" onClick={handleFocusLeft}></img>
+    <div className="carousel" style={{ height: "100vh", margin: "auto" }}>
+      <ul
+        className="carousellist"
+        style={{
+          display: "flex",
+          listStyle: "none",
+          height: "100%",
+          justifyContent: "center",
+        }}
+      >
+        <li
+          className="arrow"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          <img
+            src={leftarrow}
+            alt="left arrow"
+            onClick={handleFocusLeft}
+            style={{ width: "50px" }}
+          ></img>
+        </li>
         {imageItem}
-        <img
-          src={rightarrow}
-          alt="right arrow"
-          onClick={handleFocusRight}
-        ></img>
+        <li
+          className="arrow"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          <img
+            src={rightarrow}
+            alt="right arrow"
+            onClick={handleFocusRight}
+            style={{ width: "50px" }}
+          ></img>
+        </li>
       </ul>
       <div className="modal" onClick={handlePic}>
         <img

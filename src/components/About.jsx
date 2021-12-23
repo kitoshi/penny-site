@@ -1,14 +1,14 @@
 import penny from "../images/penny.jpg";
 //import downarrow from "../images/expand_more_white_48dp.svg";
 function About(props) {
-  function goFooter() {
+  /*function goFooter() {
     const footer = document.getElementById("footer");
     footer.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
-  }
+  }*/
   /* function goCarousel() {
     const carousel = document.querySelector("div.carousel");
     carousel.scrollIntoView({
@@ -45,7 +45,7 @@ function About(props) {
       <p className="about">Each piece is an expression of my life.</p>
       <p className="about">
         <strong>
-          <u onClick={goFooter}>Let me express your life through my art.</u>
+          <u>Let me express your life through my art.</u>
         </strong>
       </p>
       <p className="about">Take a look at my pieces.</p>

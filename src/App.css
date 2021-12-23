@@ -1,13 +1,13 @@
 :root {
-  --artichoke: #7F9172;
-  --tuscany: #B49594;
-  --thistle: #C9B1BD;
+  --artichoke: #7f9172;
+  --tuscany: #b49594;
+  --thistle: #c9b1bd;
   --richBlackForeground: #0f1a20;
   --white: #f8f8f8;
   --black: #222;
-  --gainsBoro: #D5DFE5;
+  --gainsBoro: #d5dfe5;
   --gray: #eee;
-  --hookersGreen: #567568
+  --hookersGreen: #567568;
 }
 
 .light-theme {
@@ -100,8 +100,6 @@ form {
   flex-direction: column;
 }
 
-
-
 div.insta {
   padding-left: 4%;
   padding-top: 2%;
@@ -122,52 +120,17 @@ div.aboutcontainer {
   background-color: var(--mainBg);
 }
 
-div.carousel ul {
-  padding: 4%;
-  margin-top: 0%;
+ul.carousellist {
+  margin-top: 0;
   padding-top: 0.5%;
   padding-bottom: 2%;
-  margin-bottom: 0%;
-}
-
-div.carousel ul li {
-  list-style: none;
-  display: flex;
+  margin-bottom: 0;
+  padding-left: 0;
   flex-direction: column;
-  width: auto;
-  height: 100%;
-  margin-top: 25vh;
-  border-radius: 5%;
 }
 
-div.carousel ul li img {
-  display: inline;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  background-color: none;
-}
-
-div.bg-color {
-  height: 50%;
-  display: inline;
-}
-
-
-h2.introtext {
-  color: var(--fontColor);
-  text-shadow: 2px 2px var(--navBg);
-  top: 5%;
-  right: 1%;
-  width: 45%;
-}
-
-h3.introtext {
-  color: var(--fontColor);
-  text-shadow: 2px 2px var(--navBg);
-  top: 8%;
-  right: 1%;
-  width: 45%;
+ul.carousellist li.arrow {
+  transform: rotate(90deg);
 }
 
 .modal {
@@ -183,22 +146,22 @@ h3.introtext {
   background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
   align-items: center;
   flex-direction: column;
+  justify-content: center;
 }
 
 .modal-content {
-  margin: 5%;
   border: 1px solid #888;
   height: auto;
-  width: 100%;
+  width: 95%;
   margin-bottom: 0px;
 }
 
 .modal-text {
-  color: var(--fontColor);
+  color: white;
   padding: 0px;
   margin-top: 0px;
   text-align: center;
-  width: 100%;
+  width: 95%;
 }
 
 .footer {
@@ -219,77 +182,29 @@ button:hover {
   background-color: var(--navLinkHoverBg);
 }
 
-@keyframes typing {
-  from {
-    height: 0;
-  }
-  to {
-    height: 100%;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: top left;
-  }
-
-  100% {
-    background-position: top right;
-  }
-}
-
 @media only screen and (min-width: 900px), (min-height: 900px) {
   body {
     background-color: var(--mainBg);
+  }
+
+  ul.carousellist {
+    flex-direction: row;
+  }
+
+  ul.carousellist li.arrow {
+    transform: rotate(0deg);
   }
   .App {
     padding-left: 20%;
     padding-right: 20%;
     background-color: var(--mainBg);
   }
-  h2.introtext {
-    z-index: 400;
-    position: absolute;
-    top: 5%;
-    right: 25%;
-    width: 30%;
-    font-size: 200%;
-  }
-  h3.introtext {
-    z-index: 400;
-    position: absolute;
-    top: 8%;
-    right: 25%;
-    width: 30%;
-    font-size: 200%;
-  }
 
-  div.carousel ul li {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    background-color: transparent;
-    margin-top: 4%;
-    border-radius: 5%;
-    align-items: center;
-  }
-  div.carousel ul li img {
-    display: inline;
-    width: 65%;
-    height: auto;
-    border-radius: 10px;
-    background-color: transparent;
-  }
-  div.carousel ul {
-    background-color: transparent;
-  }
   .modal-content {
     margin: 10%;
     margin-top: 6%;
     border: 1px solid #888;
-    height: 75%;
+    height: 90%;
     width: auto;
     margin-bottom: 0px;
   }
