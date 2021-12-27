@@ -1,4 +1,4 @@
-/*import { useState, useEffect, useRef } from "react";
+/*import { useState, useEffect, useRef } from 'react';
 
 function useElementonScreen(options) {
   const containerRef = useRef(null);

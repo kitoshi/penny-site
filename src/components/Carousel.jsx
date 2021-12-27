@@ -1,26 +1,26 @@
-import bee from "../images/bee.jpg";
-import elk from "../images/elk.jpg";
-import frog from "../images/frog.jpeg";
-import owl from "../images/owl.jpeg";
-import rick from "../images/rick.jpeg";
-import fairy from "../images/fairy.jpeg";
-import rightarrow from "../images/chevron_right_black.svg";
-import leftarrow from "../images/chevron_left_black.svg";
-import { useState } from "react";
-import React from "react";
+import bee from '../images/bee.jpg';
+import elk from '../images/elk.jpg';
+import frog from '../images/frog.jpeg';
+import owl from '../images/owl.jpeg';
+import rick from '../images/rick.jpeg';
+import fairy from '../images/fairy.jpeg';
+import rightarrow from '../images/chevron_right_black.svg';
+import leftarrow from '../images/chevron_left_black.svg';
+import { useState } from 'react';
+import React from 'react';
 
 function Carousel() {
-  const [activePic, setPic] = useState("");
+  const [activePic, setPic] = useState('');
   const [carouselFocus, setFocus] = useState(0);
   const handlePic = (e) => {
     const active = e.target.alt;
-    const modal = document.querySelector("div.modal");
+    const modal = document.querySelector('div.modal');
     if (activePic === altText[altText.indexOf(activePic)]) {
-      setPic(() => "");
-      modal.style.display = "none";
+      setPic(() => '');
+      modal.style.display = 'none';
     } else {
       setPic(() => active);
-      modal.style.display = "flex";
+      modal.style.display = 'flex';
     }
   };
   const handleFocusRight = () => {
@@ -40,23 +40,23 @@ function Carousel() {
   };
 
   /*const imagesColors = [
-    "#486c7b",
-    "#352f33",
-    "#595959",
-    "#1c0702",
-    "#9d6b0f",
-    "#deae40",
+    '#486c7b',
+    '#352f33',
+    '#595959',
+    '#1c0702',
+    '#9d6b0f',
+    '#deae40',
   ];*/
 
   const images = [elk, frog, owl, rick, bee, fairy];
-  const altText = ["elk", "frog", "owl", "rick", "bee", "fairy"];
+  const altText = ['elk', 'frog', 'owl', 'rick', 'bee', 'fairy'];
   const imageInfo = [
-    "Elk, November 10, 2021",
-    "Frog, November 10, 2021",
-    "Owl, November 10, 2021",
-    "Rick , November 10, 2021",
-    "Bee, November 10, 2021",
-    "Fairy, November 10, 2021",
+    'Elk, November 10, 2021',
+    'Frog, November 10, 2021',
+    'Owl, November 10, 2021',
+    'Rick , November 10, 2021',
+    'Bee, November 10, 2021',
+    'Fairy, November 10, 2021',
   ];
 
   const imageItem = images.map((element, index) => (
@@ -64,9 +64,9 @@ function Carousel() {
       key={element}
       className="imagelistitem"
       style={{
-        display: index === carouselFocus ? "flex" : "none",
-        justifyContent: "center",
-        height: "100%",
+        display: index === carouselFocus ? 'flex' : 'none',
+        justifyContent: 'center',
+        height: '100%',
       }}
     >
       <img
@@ -74,48 +74,48 @@ function Carousel() {
         src={element}
         alt={altText[images.indexOf(element)]}
         onClick={handlePic}
-        className={"paint"}
+        className={'paint'}
         style={{
-          display: index === carouselFocus ? "flex" : "none",
-          width: "100%",
-          margin: "auto",
-          height: "auto",
-          border: "5px solid",
+          display: index === carouselFocus ? 'flex' : 'none',
+          width: '100%',
+          margin: 'auto',
+          height: 'auto',
+          border: '5px solid',
         }} //ternary function inline
       />
     </li>
   ));
   return (
-    <div className="carousel" style={{ height: "100vh", margin: "auto" }}>
+    <div className="carousel" style={{ height: '100vh', margin: 'auto' }}>
       <ul
         className="carousellist"
         style={{
-          display: "flex",
-          listStyle: "none",
-          height: "100%",
+          display: 'flex',
+          listStyle: 'none',
+          height: '100%',
         }}
       >
         <li
           className="arrow"
-          style={{ display: "flex", justifyContent: "center" }}
+          style={{ display: 'flex', justifyContent: 'center' }}
         >
           <img
             src={leftarrow}
             alt="left arrow"
             onClick={handleFocusLeft}
-            style={{ width: "50px" }}
+            style={{ width: '50px' }}
           ></img>
         </li>
         {imageItem}
         <li
           className="arrow"
-          style={{ display: "flex", justifyContent: "center" }}
+          style={{ display: 'flex', justifyContent: 'center' }}
         >
           <img
             src={rightarrow}
             alt="right arrow"
             onClick={handleFocusRight}
-            style={{ width: "50px" }}
+            style={{ width: '50px' }}
           ></img>
         </li>
       </ul>

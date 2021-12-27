@@ -1,30 +1,30 @@
-import penny from "../images/penny.jpg";
-import React from "react";
-//import downarrow from "../images/expand_more_white_48dp.svg";
+import penny from '../images/penny.jpg';
+import React from 'react';
+//import downarrow from '../images/expand_more_white_48dp.svg';
 function About() {
   /*function goFooter() {
-    const footer = document.getElementById("footer");
+    const footer = document.getElementById('footer');
     footer.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
     });
   }*/
   /* function goCarousel() {
-    const carousel = document.querySelector("div.carousel");
+    const carousel = document.querySelector('div.carousel');
     carousel.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
     });
   }      <img
-        alt="downarrow"
+        alt='downarrow'
         src={downarrow}
         style={{
-          width: "35%",
-          height: "25vh",
-          marginLeft: "30%",
-          marginRight: "30%",
+          width: '35%',
+          height: '25vh',
+          marginLeft: '30%',
+          marginRight: '30%',
         }}
         onClick={goCarousel}
       ></img>*/
