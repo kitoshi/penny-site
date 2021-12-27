@@ -4,9 +4,7 @@ import frog from '../images/frog.jpeg';
 import owl from '../images/owl.jpeg';
 import rick from '../images/rick.jpeg';
 import fairy from '../images/fairy.jpeg';
-import rightarrow from '../images/chevron_right_black.svg';
-import leftarrow from '../images/chevron_left_black.svg';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import React from 'react';
 
 function Carousel() {
@@ -30,6 +28,24 @@ function Carousel() {
       setFocus((currentValue) => currentValue + 1);
     }
   };
+
+  useEffect(() => {
+    const carouselBackground = document.querySelector('div.carousel');
+    if (carouselFocus === 0) {
+      carouselBackground.style.backgroundColor = '#486c7b';
+    } else if (carouselFocus === 1) {
+      carouselBackground.style.backgroundColor = '#352f33';
+    } else if (carouselFocus === 2) {
+      carouselBackground.style.backgroundColor = '#595959';
+    } else if (carouselFocus === 3) {
+      carouselBackground.style.backgroundColor = '#1c0702';
+    } else if (carouselFocus === 4) {
+      carouselBackground.style.backgroundColor = '#9d6b0f';
+    } else if (carouselFocus === 5) {
+      carouselBackground.style.backgroundColor = '#deae40';
+    }
+    return () => {};
+  }, [carouselFocus]);
 
   const handleFocusLeft = () => {
     if (carouselFocus === 0) {
@@ -62,7 +78,7 @@ function Carousel() {
   const imageItem = images.map((element, index) => (
     <li
       key={element}
-      className="imagelistitem"
+      className='imagelistitem'
       style={{
         display: index === carouselFocus ? 'flex' : 'none',
         justifyContent: 'center',
@@ -86,9 +102,17 @@ function Carousel() {
     </li>
   ));
   return (
-    <div className="carousel" style={{ height: '100vh', margin: 'auto' }}>
+    <div
+      className='carousel'
+      style={{
+        height: '100vh',
+        margin: 'auto',
+        transition: 'background 1s',
+        transitionTimingFunction: 'ease-in-out',
+      }}
+    >
       <ul
-        className="carousellist"
+        className='carousellist'
         style={{
           display: 'flex',
           listStyle: 'none',
@@ -96,36 +120,50 @@ function Carousel() {
         }}
       >
         <li
-          className="arrow"
+          className='arrow'
           style={{ display: 'flex', justifyContent: 'center' }}
         >
-          <img
-            src={leftarrow}
-            alt="left arrow"
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            height='24px'
+            viewBox='0 0 24 24'
+            width='24px'
+            fill='#000000'
+            alt='left arrow'
             onClick={handleFocusLeft}
             style={{ width: '50px' }}
-          ></img>
+          >
+            <path d='M0 0h24v24H0V0z' fill='none' />
+            <path d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z' />
+          </svg>
         </li>
         {imageItem}
         <li
-          className="arrow"
+          className='arrow'
           style={{ display: 'flex', justifyContent: 'center' }}
         >
-          <img
-            src={rightarrow}
-            alt="right arrow"
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            height='24px'
+            viewBox='0 0 24 24'
+            width='24px'
+            fill='#000000'
             onClick={handleFocusRight}
             style={{ width: '50px' }}
-          ></img>
+            alt='right arrow'
+          >
+            <path d='M0 0h24v24H0V0z' fill='none' />
+            <path d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z' />
+          </svg>
         </li>
       </ul>
-      <div className="modal" onClick={handlePic}>
+      <div className='modal' onClick={handlePic}>
         <img
           src={images[altText.indexOf(activePic)]}
-          className="modal-content"
+          className='modal-content'
           alt={altText[altText.indexOf(activePic)]}
         ></img>
-        <p className="paintinfo modal-text">
+        <p className='paintinfo modal-text'>
           {imageInfo[altText.indexOf(activePic)]}
         </p>
       </div>
