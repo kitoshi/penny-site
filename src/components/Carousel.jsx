@@ -57,16 +57,6 @@ function Carousel() {
       setFocus((currentValue) => currentValue - 1);
     }
   };
-
-  /*const imagesColors = [
-    '#486c7b',
-    '#352f33',
-    '#595959',
-    '#1c0702',
-    '#9d6b0f',
-    '#deae40',
-  ];*/
-
   const images = [elk, frog, owl, rick, bee, fairy];
   const altText = ['elk', 'frog', 'owl', 'rick', 'bee', 'fairy'];
   const imageInfo = [
@@ -109,10 +99,11 @@ function Carousel() {
     <div
       className='carousel'
       style={{
-        height: '100vh',
+        height: '95vh',
         margin: 'auto',
         transition: 'background 0.5s',
         transitionTimingFunction: 'ease-in-out',
+        marginBottom: '5%',
       }}
     >
       <ul
