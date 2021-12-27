@@ -33,10 +33,6 @@
   color: var(--fontColor);
 }
 
-u {
-  cursor: pointer;
-}
-
 header {
   height: 10%;
 }
@@ -124,9 +120,6 @@ ul.carousellist {
   padding-left: 0;
   flex-direction: column;
 }
-ul.carousellist li.arrow {
-  transform: rotate(90deg);
-}
 
 .modal {
   display: none; /* Hidden by default */
@@ -177,6 +170,10 @@ button:hover {
   background-color: var(--navLinkHoverBg);
 }
 
+svg.Arrow {
+  transform: rotate(90deg);
+}
+
 @media only screen and (min-width: 900px), (min-height: 900px) {
   body {
     background-color: var(--mainBg);
@@ -186,9 +183,14 @@ button:hover {
     flex-direction: row;
   }
 
-  ul.carousellist li.arrow {
+  ul.carousellist li.arrowContainer {
+    flex-direction: column;
+  }
+
+  svg.Arrow {
     transform: rotate(0deg);
   }
+
   .App {
     padding-left: 20%;
     padding-right: 20%;

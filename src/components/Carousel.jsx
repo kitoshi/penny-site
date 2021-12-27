@@ -21,13 +21,6 @@ function Carousel() {
       modal.style.display = 'flex';
     }
   };
-  const handleFocusRight = () => {
-    if (carouselFocus === 5) {
-      setFocus(0);
-    } else {
-      setFocus((currentValue) => currentValue + 1);
-    }
-  };
 
   useEffect(() => {
     const carouselBackground = document.querySelector('div.carousel');
@@ -47,7 +40,17 @@ function Carousel() {
     return () => {};
   }, [carouselFocus]);
 
-  const handleFocusLeft = () => {
+  const handleFocusRight = (e) => {
+    e.preventDefault();
+    if (carouselFocus === 5) {
+      setFocus(0);
+    } else {
+      setFocus((currentValue) => currentValue + 1);
+    }
+  };
+
+  const handleFocusLeft = (e) => {
+    e.preventDefault();
     if (carouselFocus === 0) {
       setFocus(5);
     } else {
@@ -83,6 +86,7 @@ function Carousel() {
         display: index === carouselFocus ? 'flex' : 'none',
         justifyContent: 'center',
         height: '100%',
+        width: 'auto',
       }}
     >
       <img
@@ -107,7 +111,7 @@ function Carousel() {
       style={{
         height: '100vh',
         margin: 'auto',
-        transition: 'background 1s',
+        transition: 'background 0.5s',
         transitionTimingFunction: 'ease-in-out',
       }}
     >
@@ -120,41 +124,49 @@ function Carousel() {
         }}
       >
         <li
-          className='arrow'
+          className='arrowContainer'
+          onMouseUp={handleFocusLeft}
+          onTouchEnd={handleFocusLeft}
           style={{ display: 'flex', justifyContent: 'center' }}
         >
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            height='24px'
-            viewBox='0 0 24 24'
-            width='24px'
-            fill='#000000'
-            alt='left arrow'
-            onClick={handleFocusLeft}
-            style={{ width: '50px' }}
-          >
-            <path d='M0 0h24v24H0V0z' fill='none' />
-            <path d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z' />
-          </svg>
+          <button style={{ backgroundColor: 'transparent', border: 'none' }}>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              height='24px'
+              viewBox='0 0 24 24'
+              width='24px'
+              fill='#000000'
+              alt='left arrow'
+              style={{ width: '50px' }}
+              className='Arrow'
+            >
+              <path d='M0 0h24v24H0V0z' fill='none' />
+              <path d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z' />
+            </svg>
+          </button>
         </li>
         {imageItem}
         <li
-          className='arrow'
-          style={{ display: 'flex', justifyContent: 'center' }}
+          className='arrowContainer'
+          onMouseUp={handleFocusRight}
+          onTouchEnd={handleFocusRight}
+          style={{ display: 'flex', justifyContent: 'center', flex: 'none' }}
         >
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            height='24px'
-            viewBox='0 0 24 24'
-            width='24px'
-            fill='#000000'
-            onClick={handleFocusRight}
-            style={{ width: '50px' }}
-            alt='right arrow'
-          >
-            <path d='M0 0h24v24H0V0z' fill='none' />
-            <path d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z' />
-          </svg>
+          <button style={{ backgroundColor: 'transparent', border: 'none' }}>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              height='24px'
+              viewBox='0 0 24 24'
+              width='24px'
+              fill='#000000'
+              style={{ width: '50px' }}
+              alt='right arrow'
+              className='Arrow'
+            >
+              <path d='M0 0h24v24H0V0z' fill='none' />
+              <path d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z' />
+            </svg>
+          </button>
         </li>
       </ul>
       <div className='modal' onClick={handlePic}>
