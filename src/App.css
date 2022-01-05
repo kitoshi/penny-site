@@ -110,6 +110,7 @@ div.insta {
 div.aboutcontainer {
   text-shadow: 1px 1px var(--themeDropDownBg);
   background-color: var(--mainBg);
+  margin: auto;
 }
 
 ul.carousellist {
@@ -177,7 +178,15 @@ svg.Arrow {
 
 .App {
   padding-top: 5%;
+  padding-bottom: 5%;
   background-color: var(--mainBg);
+}
+
+img.paint {
+  width: 100%;
+  margin: auto;
+  height: 506.667px;
+  border: 5px solid;
 }
 
 @media only screen and (min-width: 900px), (min-height: 900px) {
@@ -185,8 +194,26 @@ svg.Arrow {
     background-color: var(--mainBg);
   }
 
+  li.imagelistitem {
+    max-width: 878.733px;
+    height: 100%;
+  }
+
+  img.paint {
+    height: 100%;
+    width: auto;
+    max-width: 878.733px;
+  }
+
   ul.carousellist {
     flex-direction: row;
+  }
+
+  div.carousel {
+    max-width: 994.733px;
+    padding-bottom: 5%;
+    padding-top: 2%;
+    height: 90vh;
   }
 
   ul.carousellist li.arrowContainer {

@@ -21,20 +21,37 @@ function Carousel() {
       modal.style.display = 'flex';
     }
   };
+  //if mobile change to swipe for carousel and arrow moves to about section
 
   useEffect(() => {
     const carouselBackground = document.querySelector('div.carousel');
+    const arrowList = document.querySelectorAll('svg.Arrow');
     if (carouselFocus === 0) {
       carouselBackground.style.backgroundColor = '#486c7b';
     } else if (carouselFocus === 1) {
+      for (const item of arrowList) {
+        item.style.fill = 'white';
+      }
       carouselBackground.style.backgroundColor = '#352f33';
     } else if (carouselFocus === 2) {
+      for (const item of arrowList) {
+        item.style.fill = 'black';
+      }
       carouselBackground.style.backgroundColor = '#595959';
     } else if (carouselFocus === 3) {
+      for (const item of arrowList) {
+        item.style.fill = 'white';
+      }
       carouselBackground.style.backgroundColor = '#1c0702';
     } else if (carouselFocus === 4) {
-      carouselBackground.style.backgroundColor = '#9d6b0f';
+      for (const item of arrowList) {
+        item.style.fill = 'black';
+      }
+      carouselBackground.style.backgroundColor = '#dcc8b0';
     } else if (carouselFocus === 5) {
+      for (const item of arrowList) {
+        item.style.fill = 'black';
+      }
       carouselBackground.style.backgroundColor = '#deae40';
     }
     return () => {};
@@ -76,7 +93,7 @@ function Carousel() {
         display: index === carouselFocus ? 'flex' : 'none',
         justifyContent: 'center',
         height: '100%',
-        width: 'auto',
+        width: '100%',
       }}
     >
       <img
@@ -87,10 +104,6 @@ function Carousel() {
         className={'paint'}
         style={{
           display: index === carouselFocus ? 'flex' : 'none',
-          width: '100%',
-          margin: 'auto',
-          height: 'auto',
-          border: '5px solid',
         }} //ternary function inline
       />
     </li>
@@ -99,11 +112,9 @@ function Carousel() {
     <div
       className='carousel'
       style={{
-        height: '95vh',
         margin: 'auto',
         transition: 'background 0.5s',
         transitionTimingFunction: 'ease-in-out',
-        marginBottom: '5%',
       }}
     >
       <ul
@@ -128,7 +139,11 @@ function Carousel() {
               width='24px'
               fill='#000000'
               alt='left arrow'
-              style={{ width: '50px' }}
+              style={{
+                width: '50px',
+                transitionProperty: 'all',
+                transitionDuration: '0.5s',
+              }}
               className='Arrow'
             >
               <path d='M0 0h24v24H0V0z' fill='none' />
@@ -139,7 +154,7 @@ function Carousel() {
         {imageItem}
         <li
           className='arrowContainer'
-          onMouseUp={handleFocusRight}
+          onMouseUp={handleFocusRight} //need logic for which mouse button
           onTouchEnd={handleFocusRight}
           style={{ display: 'flex', justifyContent: 'center', flex: 'none' }}
         >
@@ -155,7 +170,10 @@ function Carousel() {
               className='Arrow'
             >
               <path d='M0 0h24v24H0V0z' fill='none' />
-              <path d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z' />
+              <path
+                d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z'
+                outline='3px solid white'
+              />
             </svg>
           </button>
         </li>
