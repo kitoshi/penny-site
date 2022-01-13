@@ -1,5 +1,4 @@
 import penny from '../images/penny.jpg';
-import React from 'react';
 //import downarrow from '../images/expand_more_white_48dp.svg';
 function About() {
   /*function goFooter() {

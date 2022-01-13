@@ -5,7 +5,6 @@ import owl from '../images/owl.jpeg';
 import rick from '../images/rick.jpeg';
 import fairy from '../images/fairy.jpeg';
 import { useState, useEffect } from 'react';
-import React from 'react';
 
 function Carousel() {
   const [activePic, setPic] = useState('');
