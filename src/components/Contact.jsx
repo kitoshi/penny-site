@@ -17,6 +17,6 @@ function Contact() {
         </form>
       </footer>
     </>
-  );
+  )
 }
-export default Contact;
+export default Contact

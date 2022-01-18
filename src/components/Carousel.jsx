@@ -1,80 +1,80 @@
-import bee from '../images/bee.jpg';
-import elk from '../images/elk.jpg';
-import frog from '../images/frog.jpeg';
-import owl from '../images/owl.jpeg';
-import rick from '../images/rick.jpeg';
-import fairy from '../images/fairy.jpeg';
-import { useState, useEffect } from 'react';
+import bee from '../images/bee.jpg'
+import elk from '../images/elk.jpg'
+import frog from '../images/frog.jpeg'
+import owl from '../images/owl.jpeg'
+import rick from '../images/rick.jpeg'
+import fairy from '../images/fairy.jpeg'
+import { useState, useEffect } from 'react'
 
 function Carousel() {
-  const [activePic, setPic] = useState('');
-  const [carouselFocus, setFocus] = useState(0);
+  const [activePic, setPic] = useState('')
+  const [carouselFocus, setFocus] = useState(0)
   const handlePic = (e) => {
-    const active = e.target.alt;
-    const modal = document.querySelector('div.modal');
+    const active = e.target.alt
+    const modal = document.querySelector('div.modal')
     if (activePic === altText[altText.indexOf(activePic)]) {
-      setPic(() => '');
-      modal.style.display = 'none';
+      setPic(() => '')
+      modal.style.display = 'none'
     } else {
-      setPic(() => active);
-      modal.style.display = 'flex';
+      setPic(() => active)
+      modal.style.display = 'flex'
     }
-  };
+  }
   //if mobile change to swipe for carousel and arrow moves to about section
 
   useEffect(() => {
-    const carouselBackground = document.querySelector('div.carousel');
-    const arrowList = document.querySelectorAll('svg.Arrow');
+    const carouselBackground = document.querySelector('div.carousel')
+    const arrowList = document.querySelectorAll('svg.Arrow')
     if (carouselFocus === 0) {
-      carouselBackground.style.backgroundColor = '#486c7b';
+      carouselBackground.style.backgroundColor = '#486c7b'
     } else if (carouselFocus === 1) {
       for (const item of arrowList) {
-        item.style.fill = 'white';
+        item.style.fill = 'white'
       }
-      carouselBackground.style.backgroundColor = '#352f33';
+      carouselBackground.style.backgroundColor = '#352f33'
     } else if (carouselFocus === 2) {
       for (const item of arrowList) {
-        item.style.fill = 'black';
+        item.style.fill = 'black'
       }
-      carouselBackground.style.backgroundColor = '#595959';
+      carouselBackground.style.backgroundColor = '#595959'
     } else if (carouselFocus === 3) {
       for (const item of arrowList) {
-        item.style.fill = 'white';
+        item.style.fill = 'white'
       }
-      carouselBackground.style.backgroundColor = '#1c0702';
+      carouselBackground.style.backgroundColor = '#1c0702'
     } else if (carouselFocus === 4) {
       for (const item of arrowList) {
-        item.style.fill = 'black';
+        item.style.fill = 'black'
       }
-      carouselBackground.style.backgroundColor = '#dcc8b0';
+      carouselBackground.style.backgroundColor = '#dcc8b0'
     } else if (carouselFocus === 5) {
       for (const item of arrowList) {
-        item.style.fill = 'black';
+        item.style.fill = 'black'
       }
-      carouselBackground.style.backgroundColor = '#deae40';
+      carouselBackground.style.backgroundColor = '#deae40'
     }
-    return () => {};
-  }, [carouselFocus]);
+    return () => {}
+  }, [carouselFocus])
 
   const handleFocusRight = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if (carouselFocus === 5) {
-      setFocus(0);
+      setFocus(0)
     } else {
-      setFocus((currentValue) => currentValue + 1);
+      setFocus((currentValue) => currentValue + 1)
     }
-  };
+  }
 
   const handleFocusLeft = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if (carouselFocus === 0) {
-      setFocus(5);
+      setFocus(5)
     } else {
-      setFocus((currentValue) => currentValue - 1);
+      setFocus((currentValue) => currentValue - 1)
     }
-  };
-  const images = [elk, frog, owl, rick, bee, fairy];
-  const altText = ['elk', 'frog', 'owl', 'rick', 'bee', 'fairy'];
+  }
+  const images = [elk, frog, owl, rick, bee, fairy]
+  const altText = ['elk', 'frog', 'owl', 'rick', 'bee', 'fairy']
   const imageInfo = [
     'Elk, November 10, 2021',
     'Frog, November 10, 2021',
@@ -82,7 +82,7 @@ function Carousel() {
     'Rick , November 10, 2021',
     'Bee, November 10, 2021',
     'Fairy, November 10, 2021',
-  ];
+  ]
 
   const imageItem = images.map((element, index) => (
     <li
@@ -106,7 +106,7 @@ function Carousel() {
         }} //ternary function inline
       />
     </li>
-  ));
+  ))
   return (
     <div
       className='carousel'
@@ -188,7 +188,7 @@ function Carousel() {
         </p>
       </div>
     </div>
-  );
+  )
 }
 
-export default Carousel;
+export default Carousel

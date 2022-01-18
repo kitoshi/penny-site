@@ -1,4 +1,4 @@
-import penny from '../images/penny.jpg';
+import penny from '../images/penny.jpg'
 //import downarrow from '../images/expand_more_white_48dp.svg';
 function About() {
   /*function goFooter() {
@@ -50,6 +50,6 @@ function About() {
       </p>
       <p className="about">Take a look at my pieces.</p>
     </div>
-  );
+  )
 }
-export default About;
+export default About

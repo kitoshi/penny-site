@@ -10,6 +10,6 @@ function Instagram() {
         <button>Instagram</button>
       </nav>
     </>
-  );
+  )
 }
-export default Instagram;
+export default Instagram
