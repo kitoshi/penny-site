@@ -1,19 +1,11 @@
 import './App.css'
-import Carousel from './components/Carousel.jsx'
-import About from './components/About'
-import Fullscreen from './components/Fullscreen'
-import Contact from './components/Contact'
-import Navbar from './components/Navbar'
+import InteractiveEasel from './components/InteractiveEasel'
 import React from 'react'
 
 function App() {
   return (
-    <div className="App light-theme">
-      <Navbar />
-      <Fullscreen />
-      <Carousel />
-      <About />
-      <Contact />
+    <div className='App light-theme'>
+      <InteractiveEasel />
     </div>
   )
 }
